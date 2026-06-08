@@ -7,18 +7,11 @@ const app: Application = express();
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200).send(
      "The DevPlus TypeScript Server is running!"
   );
-});
-
-app.get("/api-test", (req: Request, res: Response) => {
-  res.sendFile("api-test.html", {
-    root: "public",
-  });
 });
 
 app.use("/api/auth", authRouter);

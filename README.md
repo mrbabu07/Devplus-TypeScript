@@ -6,8 +6,6 @@ DevPulse is a TypeScript, Express, and PostgreSQL API for software teams to repo
 
 Local development URL: `http://localhost:5000`
 
-Browser API console: `http://localhost:5000/api-test`
-
 ## Features
 
 - User registration and login with hashed passwords
