@@ -4,7 +4,7 @@ DevPulse is a TypeScript, Express, and PostgreSQL API for software teams to repo
 
 ## Live URL
 
-Local development URL: `http://localhost:5000`
+Local development URL: `https://devplus-type-script.vercel.app/`
 
 Vercel URL: Add your deployed Vercel URL here after deployment.
 
