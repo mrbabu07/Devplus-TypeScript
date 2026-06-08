@@ -1,10 +1,10 @@
 import app from "./app.js";
-import { initDB } from "./config/database.js";
+import { ensureDB } from "./config/database.js";
 import { env } from "./config/env.js";
 
 const startServer = async () => {
   try {
-    await initDB();
+    await ensureDB();
 
     app.listen(env.port, () => {
       console.log(`Example app listening on port ${env.port}`);

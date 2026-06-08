@@ -6,6 +6,8 @@ DevPulse is a TypeScript, Express, and PostgreSQL API for software teams to repo
 
 Local development URL: `http://localhost:5000`
 
+Vercel URL: Add your deployed Vercel URL here after deployment.
+
 ## Features
 
 - User registration and login with hashed passwords
@@ -45,6 +47,39 @@ npm run dev
 
 ```bash
 npm run build
+```
+
+## Vercel Deployment
+
+This project is ready for Vercel Express deployment. Vercel can detect the default exported Express app from `src/app.ts`. The local `src/server.ts` file is used only for `npm run dev` and `npm start`.
+
+1. Push the repository to GitHub.
+
+2. Import the repository in Vercel.
+
+3. Set the Node.js version to `24.x` if Vercel does not auto-detect it from `package.json`.
+
+4. Add these Environment Variables in Vercel Project Settings:
+
+```env
+DATABASE_URL=postgresql://user:password@host:5432/database
+JWT_SECRET=change_this_secret
+JWT_EXPIRES_IN=7d
+BCRYPT_SALT_ROUNDS=10
+```
+
+Do not add `PORT` in Vercel. Vercel manages the runtime port automatically.
+
+5. Deploy from the Vercel dashboard, or use the CLI:
+
+```bash
+npx vercel
+```
+
+For production deployment:
+
+```bash
+npx vercel --prod
 ```
 
 ## Tech Stack

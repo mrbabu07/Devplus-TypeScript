@@ -87,3 +87,16 @@ export const initDB = async () => {
 
   console.log("Database initialized successfully");
 };
+
+let dbInitPromise: Promise<void> | null = null;
+
+export const ensureDB = async () => {
+  if (!dbInitPromise) {
+    dbInitPromise = initDB().catch((error) => {
+      dbInitPromise = null;
+      throw error;
+    });
+  }
+
+  await dbInitPromise;
+};
